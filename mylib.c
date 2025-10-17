@@ -32,7 +32,7 @@ int isArmstrong(int num){
 int isAdams(int num){
     int a = num;
     int square1 = a*a;
-    int b = reverse(num);
+    int b = reversedigits(num);
     int square2 = b*b;
 
     int reverse_square1 = 0;

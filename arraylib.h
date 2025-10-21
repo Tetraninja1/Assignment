@@ -1,9 +1,6 @@
 #ifndef ARRAYLIB_H
 #define ARRAYLIB_H
 int findMaxIndex(int arr[], int size){
-    if (size <= 0) {
-        return -1;
-    }
     int maxIndex = 0;
     int maxValue = arr[0];
     for (int i = 1; i < size; i++) {
@@ -24,23 +21,34 @@ int findMinIndex(int arr[], int size){
     }return minIndex;
 }
 void displayArray(int arr[], int size){
-    for (int i = 0; i < size; i++) {
-        printf("%d\n", arr[i]);
+    printf("The array is displayed as: ");
+    for(int i=0; i<size; i++){
+        printf("%d, ", arr[i]);
     }
+    return;
+}
+float findAverage(int arr[], int size){
+    float sum = 0;
+    for(int i=0; i<size; i++){
+        sum += arr[i];
+    }
+    float avg = sum/size;
+    return avg;
 }
 void reverseArray(int arr[], int size){
-    if (size <= 1) {
-        return;
+    printf("Reverse array is displayed : ");
+    for(int i=size-1; i>=0; i--){
+        printf("%d, ", arr[i]);
     }
-    int left = 0;
-    int right = size - 1;
-    while (left < right) {
-        int temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-        left--;
-        right++;
-    }return right;
+    return;
 }
-
+int linearSearch(int arr[], int size, int value){
+    int index;
+    for(int i=0; i<size; i++){
+        if(value == arr[i]){
+            index = i;
+        }
+    }
+    return index;
+}
 #endif /* ARRAYLIB_H */
